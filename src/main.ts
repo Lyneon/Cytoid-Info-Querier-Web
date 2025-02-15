@@ -109,7 +109,7 @@ buttonCCB.addEventListener('click', function () {
                                 <span class="result-card-score">${record.score}</span>
                                 <span class="result-card-mods">`
                     for (const mod of record.mods) {
-                        html += `<img class="result-card-mod" src="/Cytoid-Info-Querier-Web/public/mod_${mod}.png" alt="${mod}">`
+                        html += `<img class="result-card-mod" src="/Cytoid-Info-Querier-Web/mod_${mod}.png" alt="${mod}">`
                     }
                     html += `</span>
                                 <span class="result-card-accuracy">${record.accuracy * 100}% | ${record.details.maxCombo} max combo</span>
