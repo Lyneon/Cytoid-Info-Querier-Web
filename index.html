@@ -1,15 +1,43 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en" class="mdui-theme-auto">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Cytoid-Info-Querier-Web</title>
-  </head>
-  <body>
-    <div id="app">
-      <h1>Initial Page</h1>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+    <link rel="stylesheet" href="/src/style.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<mdui-layout id="app" full-height>
+    <mdui-navigation-drawer class="navigation-drawer" modal close-on-overlay-click>
+        <mdui-list class="drawer-list">
+            <mdui-list-item active rounded>
+                <mdui-icon slot="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+                        <path fill="black"
+                              d="M450 128a46 46 0 0 0-44.11 59l-71.37 71.36a45.88 45.88 0 0 0-29 0l-52.91-52.91a46 46 0 1 0-89.12 0L75 293.88A46.08 46.08 0 1 0 106.11 325l87.37-87.36a45.85 45.85 0 0 0 29 0l52.92 52.92a46 46 0 1 0 89.12 0L437 218.12A46 46 0 1 0 450 128"/>
+                    </svg>
+                </mdui-icon>
+                Analytics
+            </mdui-list-item>
+        </mdui-list>
+    </mdui-navigation-drawer>
+
+    <mdui-top-app-bar variant="center-aligned" scroll-behavior="hide">
+        <mdui-button-icon icon="menu" class="open-drawer"></mdui-button-icon>
+        <mdui-top-app-bar-title>Cytoid Info Querier</mdui-top-app-bar-title>
+    </mdui-top-app-bar>
+
+    <mdui-layout-main>
+        <div class="input-bar">
+            <mdui-text-field variant="outlined" label="Cytoid ID" clearable counter maxlength="16"
+                             id="input-cytoid-id"></mdui-text-field>
+            <mdui-button id="button-ccb">查查B</mdui-button>
+        </div>
+        <div class="result-container"></div>
+    </mdui-layout-main>
+</mdui-layout>
+</body>
+<script type="module" src="/src/main.ts"></script>
 </html>
